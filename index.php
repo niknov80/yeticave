@@ -3,6 +3,49 @@ $is_auth = (bool) rand(0, 1);
 
 $user_name = 'Константин';
 $user_avatar = 'img/user.jpg';
+
+$category = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
+
+$announcements = [
+    [
+        'title' => '2014 Rossignol District Snowboard',
+        'category' => $category[0],
+        'price' => 10999,
+        'img' => 'img/lot-1.jpg'
+    ],
+    [
+        'title' => 'DC Ply Mens 2016/2017 Snowboard',
+        'category' => $category[0],
+        'price' => 159999,
+        'img' => 'img/lot-2.jpg'
+    ],
+    [
+        'title' => 'Крепления Union Contact pro 2015 года размер L/XL',
+        'category' => $category[1],
+        'price' => 8000,
+        'img' => 'img/lot-3.jpg'
+    ],
+    [
+        'title' => 'Ботинки для сноуборда DC Mutiny Charocal',
+        'category' => $category[2],
+        'price' => 10999,
+        'img' => 'img/lot-4.jpg'
+    ],
+    [
+        'title' => 'Куртка для сноуборда DC Mutiny Charocal',
+        'category' => $category[3],
+        'price' => 7500,
+        'img' => 'img/lot-5.jpg'
+    ],
+    [
+        'title' => 'Маска Oakley Canopy',
+        'category' => $category[5],
+        'price' => 5400,
+        'img' => 'img/lot-6.jpg'
+    ],
+];
+
+// var_dump($announcements[0]['price']);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -43,8 +86,7 @@ $user_avatar = 'img/user.jpg';
                     <a href="#">Вход</a>
                 </li>
             </ul>
-        <?php endif; ?>
-        <!-- здесь должен быть PHP код для показа аватара пользователя -->
+        <?php endif; ?>     
 
         </nav>
     </div>
@@ -93,7 +135,6 @@ $user_avatar = 'img/user.jpg';
                             <span class="lot__cost">10 999<b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
-
                         </div>
                     </div>
                 </div>
@@ -105,24 +146,12 @@ $user_avatar = 'img/user.jpg';
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-            <li class="nav__item">
-                <a href="all-lots.html">Доски и лыжи</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Крепления</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Ботинки</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Одежда</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Инструменты</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Разное</a>
-            </li>
+            <?php foreach ($category as  $value): ?>
+                
+                <li class="nav__item">
+                    <a href="all-lots.html"><?=$value; ?></a>
+                </li>
+            <?php endforeach; ?>
         </ul>
     </nav>
     <div class="main-footer__bottom container">
