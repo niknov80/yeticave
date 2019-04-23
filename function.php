@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set("Europe/Moscow");
 $is_auth = (bool) rand(0, 1);
 
 $user_name = 'Константин';
@@ -47,24 +47,28 @@ $announcements = [
 
 function get_cost ($cost){
     $cost = ceil($cost);
-
     $cost = number_format($cost, 0, '.', ' ');
     $cost = $cost . " ₽";
     return $cost;
 }
 
-function include_template($file_path, $template_data){
-    
+function include_template($file_path, $template_data){    
     if (file_exists($file_path)){ 
-       
-              
-        
         $cont = require($file_path);
     } else {
         $cont = '';
     }
-    
-    // var_dump ($cont);
-    // echo $cont;
-    // print ($cont);
 }
+
+
+function timer (){
+    $curday = intval(date('U'));
+    $tomorrow  = strtotime('24.04.2019');
+    $time_remaining = $tomorou - $curday;
+    $hours = floor($time_remaining/3600);
+    $minutes = floor($time_remaining % 3600 / 60);
+
+    print ($hours . " : " . $minutes);
+}
+
+

@@ -28,7 +28,7 @@
             <h2>Открытые лоты</h2>
         </div>
         <ul class="lots__list">
-            <?php foreach ($template_data as $key => $item): ?>
+            <?php foreach ($template_data['announcements'] as $key => $item): ?>
                 <li class="lots__item lot">
                     <div class="lot__image">
                         <img src="<?=htmlspecialchars($item['img']); ?>" width="350" height="260" alt="Сноуборд">
@@ -42,6 +42,7 @@
                                 <span class="lot__cost"><?=get_cost(htmlspecialchars($item['price'])); ?></span>
                             </div>
                             <div class="lot__timer timer">
+                                <?=$template_data['timer']; ?>
                             </div>
                         </div>
                     </div>
