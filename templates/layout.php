@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title><?=$page_title; ?></title>
+    <title><?= $template_data['pageTitle']; ?></title>
     <link href="css/normalize.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -21,12 +22,12 @@
         <a class="main-header__add-lot button" href="add-lot.html">Добавить лот</a>
 
         <nav class="user-menu">
-        <?php if ($is_auth): ?>
+        <?php if ($template_data['isAuth']): ?>
             <div class="user-menu__image">
-                <img src="<?=$user_avatar; ?>" width="40" height="40" alt="Пользователь">
+                <img src="<?=$template_data['userAvatar']; ?>" width="40" height="40" alt="Пользователь">
             </div>
             <div class="user-menu__logged">
-                <p><?=$user_name;?></p>
+                <p><?=$template_data['userName'];?></p>
             </div>
         <?php else: ?>
             <ul class="user-menu__list">
@@ -42,18 +43,16 @@
         </nav>
     </div>
 </header>
-<main class="container">
-    <?=$page_content; ?>
-</main>
 
+<?=$template_data['pageContent']; ?>
 
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-            <?php foreach ($template_data as  $value): ?>
+            <?php foreach ($template_data['category'] as  $value): ?>
                 
                 <li class="nav__item">
-                    <a href="all-lots.html"><?=$value; ?></a>
+                    <a href="all-lots.html"><?=htmlspecialchars($value); ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>
