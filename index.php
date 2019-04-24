@@ -15,6 +15,6 @@ $page_layout = include_template('templates/layout.php', ['category' => $category
                                           'isAuth' => $is_auth, 
                                           'userName' => $user_name, 
                                           'userAvatar' => $user_avatar]);
-                          
+                        
 print ($page_layout);
 

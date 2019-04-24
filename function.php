@@ -63,11 +63,11 @@ function include_template($file_path, $template_data){
 
 function timer (){
     $curday = intval(date('U'));
-    $tomorrow  = strtotime('24.04.2019');
-    $time_remaining = $tomorou - $curday;
+    $tomorrow  = strtotime('25.04.2019');
+    $time_remaining = $tomorrow - $curday;
     $hours = floor($time_remaining/3600);
     $minutes = floor($time_remaining % 3600 / 60);
-
+    
     print ($hours . " : " . $minutes);
 }
 
