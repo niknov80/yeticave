@@ -12,6 +12,7 @@ $user_name = 'Константин';
 $user_avatar = 'img/user.jpg';
 $page_title = 'Интернет-аукцион сноубордического и горнолыжного снаряжения';
 $category = ["Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
+$ending_time = '26.04.2019';
 
 $announcements = [
     [
@@ -19,41 +20,41 @@ $announcements = [
         'category' => $category[0],
         'price' => 10999,
         'img' => 'img/lot-1.jpg',
-        'id' => 0
+        'id' => 1
     ],
     [
         'title' => 'DC Ply Mens 2016/2017 Snowboard',
         'category' => $category[0],
         'price' => 159999,
         'img' => 'img/lot-2.jpg',
-        'id' => 1
+        'id' => 2
     ],
     [
         'title' => 'Крепления Union Contact pro 2015 года размер L/XL',
         'category' => $category[1],
         'price' => 8000,
         'img' => 'img/lot-3.jpg',
-        'id' => 2
+        'id' => 3
     ],
     [
         'title' => 'Ботинки для сноуборда DC Mutiny Charocal',
         'category' => $category[2],
         'price' => 10999,
         'img' => 'img/lot-4.jpg',
-        'id' => 3
+        'id' => 4
     ],
     [
         'title' => 'Куртка для сноуборда DC Mutiny Charocal',
         'category' => $category[3],
         'price' => 7500,
         'img' => 'img/lot-5.jpg',
-        'id' => 4
+        'id' => 5
     ],
     [
         'title' => 'Маска Oakley Canopy',
         'category' => $category[5],
         'price' => 5400,
         'img' => 'img/lot-6.jpg',
-        'id' => 5
+        'id' => 6
     ],
 ];

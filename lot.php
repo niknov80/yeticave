@@ -12,9 +12,6 @@ if (isset($_GET['id'])){
             break;
         }
     }
-
-
-    
 } 
 
 if(!$announcement){
@@ -22,15 +19,9 @@ if(!$announcement){
     die();
 }
 
+$timer = timer($ending_time);
 
-
-ob_start(); 
-timer();
-$timer = ob_get_clean();
-ob_start();
-include_template('templates/lot.php', ['announcements' =>  $announcements[$announcement], 'timer' => $timer, 'category' => $category]);
-$page_content = ob_get_clean();
-
+$page_content = include_template('templates/lot.php', ['announcements' =>  $announcements[$announcement - 1], 'timer' => $timer, 'category' => $category]);
 
 $page_layout = include_template('templates/layout.php', ['category' => $category, 
                                           'pageTitle' => $page_title, 
