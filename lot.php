@@ -3,8 +3,14 @@ require_once('function.php');
 require_once('data.php');
 
 $announcement = null;
+$cookie_name = 'lots_id';
+$cookie_value = [];
+$cookie_expire = strtotime("+1 day");
+$cookie_path = "/";
 
 if (isset($_GET['id'])){
+    $cookie_value = $_GET['id'];
+
     $announcement_id = $_GET['id'];    
     foreach ($announcements as $key => $item){
         if ($item['id'] == $announcement_id){
@@ -18,6 +24,11 @@ if(!$announcement){
     http_response_code(404);
     die();
 }
+
+$cookie_value_str = json_encode($cookie_value);
+setcookie ($cookie_name, $cookie_value_str, $cookie_expire, $cookie_path);
+var_dump($cookie_value);
+var_dump($_COOKIE);
 
 $timer = timer($ending_time);
 
