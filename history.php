@@ -2,10 +2,10 @@
 require_once('function.php');
 require_once('data.php');
 
-// if (isset($_COOKIE['lots_id'])){
-       
-// }
-$visited_lots_id = json_decode($_COOKIE['lots_id']); 
+if (isset($_COOKIE['lots_id'])){
+    $visited_lots_id = json_decode($_COOKIE['lots_id']); 
+}
+
 $timer = timer($ending_time);
 
 // var_dump($visited_lots_id);

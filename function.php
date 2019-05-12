@@ -29,3 +29,16 @@ function timer ($ending_time){
     $end_time = ($hours . " : " . $minutes);
     return $end_time;
 }
+
+function searchUserByEmail($email_from_form, $registred_users){
+    $result = false;    
+
+    foreach($registred_users as $key => $usr){
+        if ($email_from_form == $usr['email']){
+            $result = $usr;
+            break;
+        }
+    }
+    
+    return $result;
+}
